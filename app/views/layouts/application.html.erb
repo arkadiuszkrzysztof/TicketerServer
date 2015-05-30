@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workspace</title>
+  <title>Ticketer Server</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<!-- Temporary design -->
+<div id="container">
+  <div id="menu">
+    <%= render 'menu' %>
+  </div>
+  <div id="content">
+    <%= yield %>
+  </div>
+</div>
+<!-- Temporary design -->
 
 </body>
 </html>

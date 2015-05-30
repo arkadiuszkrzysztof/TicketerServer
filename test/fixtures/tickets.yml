@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ticketID: MyString
+  eventID_id: 
+  ownerID_id: 
+  purchaseDate: 2015-05-30 19:33:35
+  expirationDate: 2015-05-30 19:33:35
+  price: 9.99
+  discount: MyString
+  seat: MyString
+  description: MyText
+  tags: MyText
+
+two:
+  ticketID: MyString
+  eventID_id: 
+  ownerID_id: 
+  purchaseDate: 2015-05-30 19:33:35
+  expirationDate: 2015-05-30 19:33:35
+  price: 9.99
+  discount: MyString
+  seat: MyString
+  description: MyText
+  tags: MyText

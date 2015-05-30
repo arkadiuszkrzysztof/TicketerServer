@@ -1,4 +1,28 @@
 Rails.application.routes.draw do
+
+  resources :users
+  resources :events
+  resources :patterns
+  resources :rules
+  resources :schedules
+  resources :devices
+  
+  root 'go#home'
+  
+  get 'go/home'
+  get 'go/about'
+  get 'go/settings'
+  get 'go/calendar'
+  get 'go/security'
+  get 'go/import'
+  get 'go/archive'
+  get 'go/demand'
+  
+  namespace :api do
+    resources :tickets
+  end
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,40 @@
+<p class="header">.:: MENU ::.</p>
+<ul>
+    <li><%= link_to 'Home', controller: 'go', action: 'home' %></li>
+    <li><%= link_to 'About', controller: 'go', action: 'about' %></li>
+    <li><%= link_to 'Settings', controller: 'go', action: 'settings' %></li>
+    <li><%= link_to 'Calendar', controller: 'go', action: 'calendar' %></li>
+    <li><%= link_to 'Security', controller: 'go', action: 'security' %></li>
+    <li>Users
+        <ul>
+            <li><%= link_to 'Show', controller: 'users', action: 'index' %></li>
+            <li><%= link_to 'Add', controller: 'users', action: 'new' %></li>
+            <li><%= link_to 'Import', controller: 'go', action: 'import' %></li>
+        </ul>
+    </li>
+    <li>Events
+        <ul>
+            <li><%= link_to 'Show', controller: 'events', action: 'index' %></li>
+            <li><%= link_to 'Add', controller: 'events', action: 'new' %></li>
+            <li><%= link_to 'Archive', controller: 'go', action: 'archive' %></li>
+        </ul>
+    </li>
+    <li>Patterns
+        <ul>
+            <li><%= link_to 'Show', controller: 'patterns', action: 'index' %></li>
+            <li><%= link_to 'Request', controller: 'go', action: 'demand' %></li>
+        </ul>
+    </li>
+    <li>Rules
+        <ul>
+            <li><%= link_to 'Show', controller: 'rules', action: 'index' %></li>
+            <li><%= link_to 'Add', controller: 'rules', action: 'new' %></li>
+        </ul>
+    </li>
+    <li>Schedules
+        <ul>
+            <li><%= link_to 'Show', controller: 'schedules', action: 'index' %></li>
+            <li><%= link_to 'Add', controller: 'schedules', action: 'new' %></li>
+        </ul>
+    </li>
+</ul>
