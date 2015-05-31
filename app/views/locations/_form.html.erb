@@ -1,0 +1,46 @@
+<% if @location.errors.any? %>
+    <div id="errors">
+        <ul>
+            <% @location.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+<%= form_for @location do |f| %>
+    <p>
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+    </p>
+    <p>
+        <%= f.label :fullName %><br>
+        <%= f.text_field :fullName %>
+    </p>
+    <p>
+        <%= f.label :address %><br>
+        <%= f.text_area :address %>
+    </p>
+    <p>
+        <%= f.label :phone %><br>
+        <%= f.text_field :phone %>
+    </p>
+    <p>
+        <%= f.label :email %><br>
+        <%= f.text_field :email %>
+    </p>
+    <p>
+        <%= f.label :description %><br>
+        <%= f.text_area :description %>
+    </p>
+    <p>
+        <%= f.label :capacity %><br>
+        <%= f.number_field :capacity, minimum: 0, step: 1 %>
+    </p>
+    <p>
+        <%= f.label :tags %><br>
+        <%= f.text_area :tags %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>

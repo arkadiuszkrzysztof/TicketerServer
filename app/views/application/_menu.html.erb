@@ -5,6 +5,9 @@
     <li><%= link_to 'Settings', controller: 'go', action: 'settings' %></li>
     <li><%= link_to 'Calendar', controller: 'go', action: 'calendar' %></li>
     <li><%= link_to 'Security', controller: 'go', action: 'security' %></li>
+</ul>
+<p>----------- -----------</p>
+<ul>
     <li>Users
         <ul>
             <li><%= link_to 'Show', controller: 'users', action: 'index' %></li>
@@ -35,6 +38,21 @@
         <ul>
             <li><%= link_to 'Show', controller: 'schedules', action: 'index' %></li>
             <li><%= link_to 'Add', controller: 'schedules', action: 'new' %></li>
+        </ul>
+    </li>
+</ul>
+<p>----------- -----------</p>
+<ul>
+    <li>Organizations
+        <ul>
+            <li><%= link_to 'Show', controller: 'organizations', action: 'index' %></li>
+            <li><%= link_to 'Add', controller: 'organizations', action: 'new' %></li>
+        </ul>
+    </li>
+    <li>Locations
+        <ul>
+            <li><%= link_to 'Show', controller: 'locations', action: 'index' %></li>
+            <li><%= link_to 'Add', controller: 'locations', action: 'new' %></li>
         </ul>
     </li>
 </ul>

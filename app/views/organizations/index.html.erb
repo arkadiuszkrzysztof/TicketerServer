@@ -1,0 +1,32 @@
+<h1>Organizations</h1>
+
+<% if @organizations.blank? %>
+    <p>Empty!</p>
+<% else %>
+    <table border="1">
+      <tr>
+        <th>Name</th>
+        <th>Full name</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Tags</th>
+        <th>Actions</th>
+      </tr>
+     
+      <% @organizations.each do |organization| %>
+        <tr>
+          <td><%= organization.name %></td>
+          <td><%= organization.fullName %></td>
+          <td><%= simple_format(organization.address) %></td>
+          <td><%= organization.phone %></td>
+          <td><%= organization.email %></td>
+          <td><%= organization.tags %></td>
+          <td>
+            <%= link_to "Edit", edit_organization_path(organization) %><br>
+            <%= link_to "Remove", organization, method: :delete, data: {confirm: "Are you sure?"} %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+<% end %>

@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150530194153) do
+ActiveRecord::Schema.define(version: 20150531141540) do
 
   create_table "events", force: true do |t|
     t.string   "name"
     t.string   "fullName"
     t.integer  "owner_id"
     t.integer  "location_id"
-    t.datetime "startDate"
-    t.datetime "endDate"
+    t.date     "startDate"
+    t.date     "endDate"
     t.text     "description"
     t.text     "tags"
     t.datetime "created_at"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150530194153) do
     t.string   "phone"
     t.string   "email"
     t.text     "description"
-    t.integer  "capacity"
+    t.string   "capacity"
     t.text     "tags"
     t.datetime "created_at"
     t.datetime "updated_at"

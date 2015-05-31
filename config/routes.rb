@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :rules
   resources :schedules
   resources :devices
+  resources :organizations
+  resources :tickets
+  resources :locations
   
   root 'go#home'
   

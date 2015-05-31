@@ -1,0 +1,36 @@
+<h1>Events</h1>
+
+<% if @events.blank? %>
+    <p>Empty!</p>
+<% else %>
+    <table border="1">
+      <tr>
+        <th>Name</th>
+        <th>Full name</th>
+        <th>Owner</th>
+        <th>Location</th>
+        <th>Start date</th>
+        <th>End date</th>
+        <th>Description</th>
+        <th>Tags</th>
+        <th>Actions</th>
+      </tr>
+     
+      <% @events.each do |event| %>
+        <tr>
+          <td><%= event.name %></td>
+          <td><%= event.fullName %></td>
+          <td><%= @organizations.find(event.owner_id).fullName %></td>
+          <td><%= @locations.find(event.location_id).fullName %></td>
+          <td><%= event.startDate %></td>
+          <td><%= event.endDate %></td>
+          <td><%= simple_format(event.description) %></td>
+          <td><%= event.tags %></td>
+          <td>
+            <%= link_to "Edit", edit_event_path(event) %><br>
+            <%= link_to "Remove", event, method: :delete, data: {confirm: "Are you sure?"} %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+<% end %>
