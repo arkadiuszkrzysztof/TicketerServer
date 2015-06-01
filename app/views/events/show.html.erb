@@ -1,0 +1,48 @@
+<h1 class="contentHeader">Event Details</h1>
+
+<table id="formTable">
+    <tr class="formRow">
+        <td class="formCell">
+            <span class="itemDescription">Event name</span><br>
+            <span class="itemDetails"><%= @event.name %></span>
+        </td>
+        <td class="formCell">
+            <span class="itemDescription">Event full name</span><br>
+            <span class="itemDetails"><%= @event.fullName %></span>
+        </td>
+    </tr>
+    <tr class="formRow">
+        <td class="formCell">
+            <span class="itemDescription">Administrator</span><br>
+            <span class="itemDetails"><%= link_to @organization.fullName, @organization %></span><br>
+            Email: <span class="itemDetails"><%= @organization.email %></span><br>
+            Phone: <span class="itemDetails"><%= @organization.phone %></span>
+        </td>
+        <td class="formCell">
+            <span class="itemDescription">Location</span><br>
+            <span class="itemDetails"><%= link_to @location.fullName, @location %></span><br>
+            Email: <span class="itemDetails"><%= @location.email %></span><br>
+            Phone: <span class="itemDetails"><%= @location.phone %></span>
+        </td>
+    </tr>
+    <tr class="formRow">
+        <td class="formCell">
+            <span class="itemDescription">Start date (YYYY-MM-DD)</span><br>
+            <span class="itemDetails"><%= @event.startDate %></span>
+        </td>
+        <td class="formCell">
+            <span class="itemDescription">End date (YYYY-MM-DD)</span><br>
+            <span class="itemDetails"><%= @event.endDate %></span>
+        </td>
+    </tr>
+    <tr class="formRow">
+        <td class="formCell">
+            <span class="itemDescription">Event description</span><br>
+            <span class="itemDetails"><%= simple_format(@event.description) %></span>
+        </td>
+        <td class="formCell">
+            <span class="itemDescription">Tags</span><br>
+            <span class="itemDetails"><%= simple_format(@event.tags) %></span>
+        </td>
+    </tr>
+</table>

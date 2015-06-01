@@ -1,23 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Ticketer Server</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<!-- Temporary design -->
-<div id="container">
-  <div id="menu">
-    <%= render 'menu' %>
-  </div>
-  <div id="content">
-    <%= yield %>
-  </div>
-</div>
-<!-- Temporary design -->
-
-</body>
+    <head>
+        <title>Ticketer Server</title>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <div id="greeter">Welcome!</div>
+        <div id="container">
+            <div id="top">
+                <img src="<%= image_url 'top.png' %>" alt="Ticketer" id="topBanner">
+                <div id="smartShorts">
+                    <img src="<%= image_url 'home63.png' %>" alt="Home" class="smartShort" 
+                         onmouseover="showSmartDescription('HOME')" onmouseout="hideSmartDescription()"
+                         onclick="showSmartDialog('HOME')">
+                    <img src="<%= image_url 'tools3.png' %>" alt="Settings" class="smartShort"
+                         onmouseover="showSmartDescription('SETTINGS')" onmouseout="hideSmartDescription()"
+                         onclick="showSmartDialog('SETTINGS')">
+                    <img src="<%= image_url 'calendar146.png' %>" alt="Calendar" class="smartShort"
+                         onmouseover="showSmartDescription('CALENDAR')" onmouseout="hideSmartDescription()"
+                         onclick="showSmartDialog('CALENDAR')">
+                    <img src="<%= image_url 'responsive16.png' %>" alt="Devices" class="smartShort"
+                         onmouseover="showSmartDescription('DEVICES')" onmouseout="hideSmartDescription()"
+                         onclick="showSmartDialog('DEVICES')">
+                    <img src="<%= image_url 'lock26.png' %>" alt="Secure" class="smartShort"
+                         onmouseover="showSmartDescription('SECURE')" onmouseout="hideSmartDescription()"
+                         onclick="showSmartDialog('SECURE')">
+                    <div id="smartDesc"></div>
+                    <div id="smartDialog"></div>
+                </div>
+            </div>
+            <div id="menu">
+                <%= render 'menu' %>
+            </div>
+            <div id="content">
+                <div id="contentAJAX">
+                    <%= yield %>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

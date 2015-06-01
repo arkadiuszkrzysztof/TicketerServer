@@ -8,49 +8,61 @@
     </div>
 <% end %>
 <%= form_for @event do |f| %>
-    <p>
-        <%= f.label :name %><br>
-        <%= f.text_field :name %>
-    </p>
-    <p>
-        <%= f.label :fullName %><br>
-        <%= f.text_field :fullName %>
-    </p>
-    <p>
-        <%= f.label :owner_id %><br>
-        <%= f.collection_select(:owner_id, @organizations, 'id', 'fullName') %>
-    </p>
-    <p>
-        <%= f.label :location_id %><br>
-        <%= f.collection_select(:location_id, @locations, 'id', 'fullName') %>
-    </p>
-    <p id="startDate">
-        <%= f.label :startDate %><br>
-        <%= f.text_field :startDate %>
-    </p>
-    <p id="endDate">
-        <%= f.label :endDate %><br>
-        <%= f.text_field :endDate %>
-    </p>
-    <p>
-        <%= f.label :description %><br>
-        <%= f.text_area :description %>
-    </p>
-    <p>
-        <%= f.label :tags %><br>
-        <%= f.text_area :tags %>
-    </p>
-    <p>
-        <%= f.submit %>
-    </p>
+    <table id="formTable">
+        <tr class="formRow">
+            <td class="formCell">
+                <%= f.label "Event name" %><br>
+                <%= f.text_field :name, :class => "formTextfield" %>
+            </td>
+            <td class="formCell">
+                <%= f.label "Event full name" %><br>
+                <%= f.text_field :fullName, :class => "formTextfield" %>
+            </td>
+        </tr>
+        <tr class="formRow">
+            <td class="formCell">
+                <%= f.label "Administrator" %><br>
+                <%= f.collection_select(:owner_id, @organizations, 'id', 'fullName') %>
+            </td>
+            <td class="formCell">
+                <%= f.label "Location" %><br>
+                <%= f.collection_select(:location_id, @locations, 'id', 'fullName') %>
+            </td>
+        </tr>
+        <tr class="formRow">
+            <td class="formCell">
+                <%= f.label "Start date (YYYY-MM-DD)" %><br>
+                <%= f.text_field :startDate, :class => "formTextfield", :id => "startDate" %>
+            </td>
+            <td class="formCell">
+                <%= f.label "End date (YYYY-MM-DD)" %><br>
+                <%= f.text_field :endDate, :class => "formTextfield", :id => "endDate" %>
+            </td>
+        </tr>
+        <tr class="formRow">
+            <td class="formCell">
+                <%= f.label "Event description" %><br>
+                <%= f.text_area :description, :class => "formTextarea" %>
+            </td>
+            <td class="formCell">
+                <%= f.label "Tags" %><br>
+                <%= f.text_area :tags, :class => "formTextarea" %>
+            </td>
+        </tr>
+        <tr class="formRow">
+            <td class="formCell formCenter" colspan="2">
+                <%= f.submit "Save Event", :class => "formSubmit" %>
+            </td>
+        </tr>
+    </table>
 <% end %>
 
 <script>
     $(document).ready(function(){
-        $("#startDate input").datepicker({
+        $("#startDate").datepicker({
             dateFormat: "yy-mm-dd"
         });
-        $("#endDate input").datepicker({
+        $("#endDate").datepicker({
             dateFormat: "yy-mm-dd"
         });
     });

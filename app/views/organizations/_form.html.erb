@@ -8,31 +8,41 @@
     </div>
 <% end %>
 <%= form_for @organization do |f| %>
-    <p>
-        <%= f.label :name %><br>
-        <%= f.text_field :name %>
-    </p>
-    <p>
-        <%= f.label :fullName %><br>
-        <%= f.text_field :fullName %>
-    </p>
-    <p>
-        <%= f.label :address %><br>
-        <%= f.text_area :address %>
-    </p>
-    <p>
-        <%= f.label :phone %><br>
-        <%= f.text_field :phone %>
-    </p>
-    <p>
-        <%= f.label :email %><br>
-        <%= f.text_field :email %>
-    </p>
-    <p>
-        <%= f.label :tags %><br>
-        <%= f.text_area :tags %>
-    </p>
-    <p>
-        <%= f.submit %>
-    </p>
+    <table id="formTable">
+        <tr class="formRow">
+            <td class="formCell">
+                <%= f.label "Organization name" %><br>
+                <%= f.text_field :name, :class => "formTextfield" %>
+            </td>
+            <td class="formCell">
+                <%= f.label "Organization full name" %><br>
+                <%= f.text_field :fullName, :class => "formTextfield" %>
+            </td>
+        </tr>
+        <tr class="formRow">
+            <td class="formCell">
+                <%= f.label "Address" %><br>
+                <%= f.text_area :address, :class => "formTextarea" %>
+            </td>
+            <td class="formCell">
+                <%= f.label "Phone" %><br>
+                <%= f.text_field :phone, :class => "formTextfield" %>
+            </td>
+        </tr>
+        <tr class="formRow">
+            <td class="formCell">
+                <%= f.label "Email" %><br>
+                <%= f.text_field :email, :class => "formTextfield" %>
+            </td>
+            <td class="formCell">
+                <%= f.label "Tags" %><br>
+                <%= f.text_area :tags, :class => "formTextarea" %>
+            </td>
+        </tr>
+        <tr class="formRow">
+            <td class="formCell formCenter" colspan="2">
+                <%= f.submit "Save Organization", :class => "formSubmit" %>
+            </td>
+        </tr>
+    </table>
 <% end %>

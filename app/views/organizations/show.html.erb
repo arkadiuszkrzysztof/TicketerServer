@@ -1,0 +1,34 @@
+<h1 class="contentHeader">Organization Details</h1>
+
+<table id="formTable">
+    <tr class="formRow">
+        <td class="formCell">
+            <span class="itemDescription">Organization name</span><br>
+            <span class="itemDetails"><%= @organization.name %></span>
+        </td>
+        <td class="formCell">
+            <span class="itemDescription">Organization full name</span><br>
+            <span class="itemDetails"><%= @organization.fullName %></span>
+        </td>
+    </tr>
+    <tr class="formRow">
+        <td class="formCell">
+            <span class="itemDescription">Address</span><br>
+            <span class="itemDetails"><%= simple_format(@organization.address) %></span>
+        </td>
+        <td class="formCell">
+            <span class="itemDescription">Phone</span><br>
+            <span class="itemDetails"><%= @organization.phone %></span>
+        </td>
+    </tr>
+    <tr class="formRow">
+        <td class="formCell">
+            <span class="itemDescription">Email</span><br>
+            <span class="itemDetails"><%= @organization.email %></span>
+        </td>
+        <td class="formCell">
+            <span class="itemDescription">Tags</span><br>
+            <span class="itemDetails"><%= simple_format(@organization.tags) %></span>
+        </td>
+    </tr>
+</table>

@@ -1,30 +1,23 @@
-<h1>Organizations</h1>
-
 <% if @organizations.blank? %>
-    <p>Empty!</p>
+    <%= render 'empty' %>
 <% else %>
-    <table border="1">
-      <tr>
-        <th>Name</th>
-        <th>Full name</th>
-        <th>Address</th>
-        <th>Phone</th>
-        <th>Email</th>
-        <th>Tags</th>
-        <th>Actions</th>
+    <table  id="resultTable" cellspacing="0" cellpadding="0">
+      <tr class="resultRow">
+        <th class="tableHeader leftRadious">Organization name</th>
+        <th class="tableHeader">Phone</th>
+        <th class="tableHeader">Email</th>
+        <th class="tableHeader rightRadious">Action</th>
       </tr>
      
       <% @organizations.each do |organization| %>
-        <tr>
-          <td><%= organization.name %></td>
-          <td><%= organization.fullName %></td>
-          <td><%= simple_format(organization.address) %></td>
-          <td><%= organization.phone %></td>
-          <td><%= organization.email %></td>
-          <td><%= organization.tags %></td>
-          <td>
-            <%= link_to "Edit", edit_organization_path(organization) %><br>
-            <%= link_to "Remove", organization, method: :delete, data: {confirm: "Are you sure?"} %>
+        <tr class="resultRow">
+          <td class="resultCellLeft organizationName"><%= organization.fullName %></td>
+          <td class="resultCellLeft organizationPhone"><%= organization.phone %></td>
+          <td class="resultCellLeft organizationEmain"><%= organization.email %></td>
+          <td class="resultCellCenter resultAction">
+            <%= link_to (image_tag "magnifying13.png", :class => "quickShort"), organization %>
+            <%= link_to (image_tag "edit45.png", :class => "quickShort sidePadding"), edit_organization_path(organization) %>
+            <%= link_to image_tag("rubbish7.png", :class => "quickShort"), organization, method: :delete, data: {confirm: "Are you sure?"} %>
           </td>
         </tr>
       <% end %>

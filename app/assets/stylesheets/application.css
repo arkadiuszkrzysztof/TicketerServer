@@ -1,15 +1,335 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+html, body{
+    background-color: #E1E1E1;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333333;
+}
+#container{
+    width: 1100px;
+    position: relative;
+    margin: 0 auto;
+    background-color: #E1E1E1;
+    clear: left;
+}
+#top{
+    width: 1100px;
+    height: 100px;
+    padding: 10px 0 10px 0;
+}
+#menu{
+    width: 200px;
+    min-height: 300px;
+    float: left;
+    margin: 0 10px 0 0;
+}
+#content{
+    width: 870px;
+    min-height: 500px;
+    float: left;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 10px;
+}
+#contentAJAX{
+    width: 870px;
+    float: left;
+}
+.menuTitle, .menuItems, #content, #smartDialog{
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.75);
+    -webkit-box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.75);
+}
+.menuTitle{
+    background-color: #3264C8;
+    width: 180px;
+    padding: 10px;
+    color: #E1E1E1;
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+}
+.menuItems{
+    background-color: #FFFFFF;
+    padding: 10px;
+}
+#menuTable{
+    border: none;
+    border-spacing: 0px;
+    -webkit-border-horizontal-spacing: 0px;
+    -webkit-border-vertical-spacing: 0px;
+}
+#topBanner{
+    width: 300px;
+    height: 100px;
+    margin-left: 210px;
+    margin-right: 300px;
+    float: left;
+}
+#greeter{
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #3264C8;
+}
+.smartShort{
+    height: 40px;
+    float: left;
+    margin-right: 15px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.mItems{
+    list-style-image: url(../assets/ticket_list_color.png);
+}
+.mItem{
+    cursor: pointer;
+}
+.mItem a:link, .mItem a:hover, .mItem a:visited{
+    color: #333333;
+    text-decoration: none;
+}
+#smartDesc{
+    position: absolute;
+    z-index: 98;
+    width: 250px;
+    height: 20px;
+    left: 810px;
+    top: 90px;
+    text-align: center;
+    display: none;
+}
+#smartDialog{
+    position: absolute;
+    z-index: 99;
+    width: 250px;
+    height: 250px;
+    left: 810px;
+    top: 90px;
+    text-align: center;
+    display: none;
+    background-color: #3264C8;
+}
+#calendarHeader td{
+    font-weight: 600;
+    width: 25px;
+    color: #FFFFFF;
+}
+#arrowLeft, #arrowRight{
+    height: 15px; 
+    margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.activeItem, .mItem:hover{
+    font-weight: 600;
+}
+
+#resultTable{
+    width: 870px;
+}
+
+.resultRow{
+    width: 870px;
+    height: 50px;
+}
+
+.resultRow:hover{
+    background-color: #E1E1E1;
+    transition: all 0.3s ease-in-out;
+}
+
+.tableHeader{
+    background-color: #3264C8;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: 600;
+}
+
+.eventStatus{
+    width: 70px;
+}
+
+.eventName{
+    width: 350px;
+}
+
+.eventDate{
+    width: 100px;
+}
+
+.eventLocation{
+    width: 250px;
+}
+
+.resultCellLeft{
+    text-align: left;
+    border-bottom: 1px solid #3264C8;
+}
+
+.resultCellCenter{
+    text-align: center;
+    border-bottom: 1px solid #3264C8;
+}
+
+.resultAction{
+    width: 100px;
+}
+
+.dotColor{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #3264C8;
+    margin: 0 auto;
+}
+.dotMono{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #E1E1E1;
+    margin: 0 auto;
+}
+.leftRadious{
+    border-radius: 10px 0 0 10px;
+}
+
+.rightRadious{
+    border-radius: 0 10px 10px 0;
+}
+
+.quickShort{
+    height: 20px;
+    cursor: pointer;
+}
+
+.sidePadding{
+    padding: 0 10px 0 10px;
+}
+
+#ui-datepicker-div{
+    background-color: #3264C8;
+    color: #E1E1E1;
+    box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.75);
+    -webkit-box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.75);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+.ui-datepicker-header{
+    text-align: center;
+}
+.ui-datepicker-prev{
+    margin-right: 50px;
+}
+
+#ui-datepicker-div a {
+    color: #E1E1E1;
+    text-decoration: none;
+}
+
+#ui-datepicker-div th {
+    border-top: 1px solid #E1E1E1;
+    border-bottom: 1px solid #E1E1E1;
+}
+
+.contentHeader{
+    margin: 0px 0px 0px 10px;
+    border-bottom: 1px solid #3264C8;
+    width: 75%;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+#formTable{
+    width: 870px;
+}
+
+#formTable td{
+    vertical-align: top;
+}
+
+#formTable p{
+    margin: 0;
+}
+
+.formCell{
+    padding: 10px;
+    width: 435px;
+}
+
+.formTextfield{
+    width: 350px;
+}
+
+.formTextarea{
+    width: 350px;
+    height: 100px;
+}
+
+.formCenter{
+    text-align: center;
+}
+
+.formSubmit{
+    width: 200px;
+    height: 40px;
+    background-color: #3264C8;
+    color: #E1E1E1;
+    box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.75);
+    -webkit-box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.75);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+
+.itemDescription{
+    color: #3264C8;
+    font-weight: 600;
+}
+
+.itemDetails{
+    font-weight: 400;
+}
+
+.itemDetails a{
+    font-weight: 600;
+    color: inherit;
+    text-decoration: none;
+}
+
+.organizationName{
+    width: 350px;
+}
+
+.organizationPhone{
+    width: 150px;
+}
+
+.organizationEmain{
+    width: 270px;
+}
+
+.locationName{
+    width: 300px;
+}
+
+.locationCapacity{
+    width: 70px;
+}
+
+.locationPhone{
+    width: 150px;
+}
+
+.locationEmain{
+    width: 250px;
+}

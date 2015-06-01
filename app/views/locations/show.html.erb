@@ -1,0 +1,44 @@
+<h1 class="contentHeader">Location Details</h1>
+
+<table id="formTable">
+    <tr class="formRow">
+        <td class="formCell">
+            <span class="itemDescription">Location name</span><br>
+            <span class="itemDetails"><%= @location.name %></span>
+        </td>
+        <td class="formCell">
+            <span class="itemDescription">Location full name</span><br>
+            <span class="itemDetails"><%= @location.fullName %></span>
+        </td>
+    </tr>
+    <tr class="formRow">
+        <td class="formCell">
+            <span class="itemDescription">Address</span><br>
+            <span class="itemDetails"><%= simple_format(@location.address) %></span>
+        </td>
+        <td class="formCell">
+            <span class="itemDescription">Phone</span><br>
+            <span class="itemDetails"><%= @location.phone %></span>
+        </td>
+    </tr>
+    <tr class="formRow">
+        <td class="formCell">
+            <span class="itemDescription">Email</span><br>
+            <span class="itemDetails"><%= @location.email %></span>
+        </td>
+        <td class="formCell">
+            <span class="itemDescription">Description</span><br>
+            <span class="itemDetails"><%= simple_format(@location.description) %></span>
+        </td>
+    </tr>
+     <tr class="formRow">
+        <td class="formCell">
+            <span class="itemDescription">Capacity</span><br>
+            <span class="itemDetails"><%= @location.capacity %></span>
+        </td>
+        <td class="formCell">
+            <span class="itemDescription">Tags</span><br>
+            <span class="itemDetails"><%= simple_format(@location.tags) %></span>
+        </td>
+    </tr>
+</table>

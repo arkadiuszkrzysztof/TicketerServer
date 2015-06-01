@@ -1,34 +1,25 @@
-<h1>Locations</h1>
-
 <% if @locations.blank? %>
-    <p>Empty!</p>
+    <%= render 'empty' %>
 <% else %>
-    <table border="1">
-      <tr>
-        <th>Name</th>
-        <th>Full name</th>
-        <th>Address</th>
-        <th>Phone</th>
-        <th>Email</th>
-        <th>Description</th>
-        <th>Capacity</th>
-        <th>Tags</th>
-        <th>Actions</th>
+    <table  id="resultTable" cellspacing="0" cellpadding="0">
+      <tr class="resultRow">
+        <th class="tableHeader leftRadious">Location name</th>
+        <th class="tableHeader">Capacity</th>
+        <th class="tableHeader">Phone</th>
+        <th class="tableHeader">Email</th>
+        <th class="tableHeader rightRadious">Action</th>
       </tr>
      
       <% @locations.each do |location| %>
-        <tr>
-          <td><%= location.name %></td>
-          <td><%= location.fullName %></td>
-          <td><%= simple_format(location.address) %></td>
-          <td><%= location.phone %></td>
-          <td><%= location.email %></td>
-          <td><%= location.description %></td>
-          <td><%= location.capacity %></td>
-          <td><%= location.tags %></td>
-          <td>
-            <%= link_to "Edit", edit_location_path(location) %><br>
-            <%= link_to "Remove", location, method: :delete, data: {confirm: "Are you sure?"} %>
+        <tr class="resultRow">
+          <td class="resultCellLeft locationName"><%= location.fullName %></td>
+          <td class="resultCellLeft locationCapacity"><%= location.capacity %></td>
+          <td class="resultCellLeft locationPhone"><%= location.phone %></td>
+          <td class="resultCellLeft locationEmain"><%= location.email %></td>
+          <td class="resultCellCenter resultAction">
+            <%= link_to (image_tag "magnifying13.png", :class => "quickShort"), location %>
+            <%= link_to (image_tag "edit45.png", :class => "quickShort sidePadding"), edit_location_path(location) %>
+            <%= link_to image_tag("rubbish7.png", :class => "quickShort"), location, method: :delete, data: {confirm: "Are you sure?"} %>
           </td>
         </tr>
       <% end %>
