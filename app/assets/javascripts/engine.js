@@ -14,6 +14,60 @@ var isDialogEnabled = false;
 function setWorkspace(){
 //    jQuery("#greeter").fadeOut(1000);
     jQuery("#container").fadeIn(1000);
+    jQuery("#loginContainer").hide().fadeIn(1000);
+    
+    var path = window.location.pathname;
+    
+    if(path.includes("users")){
+        $("#info1_box").slideDown(500);
+        if(path.includes("new")){
+            $("#usersAdd").addClass("activeItem");
+        } else{
+            $("#usersShow").addClass("activeItem");
+        }
+    } else if(path.includes("events")){
+        $("#info2_box").slideDown(500);
+        if(path.includes("new")){
+            $("#eventsAdd").addClass("activeItem");
+        } else{
+            $("#eventsShow").addClass("activeItem");
+        }
+    } else if(path.includes("organizations")){
+        $("#info6_box").slideDown(500);
+        if(path.includes("new")){
+            $("#organizationsAdd").addClass("activeItem");
+        } else{
+            $("#organizationsShow").addClass("activeItem");
+        }
+    } else if(path.includes("locations")){
+        $("#info7_box").slideDown(500);
+        if(path.includes("new")){
+            $("#locationsAdd").addClass("activeItem");
+        } else{
+            $("#locationsShow").addClass("activeItem");
+        }
+    } else if(path.includes("patterns")){
+        $("#info3_box").slideDown(500);
+        if(path.includes("new")){
+            $("#patternsAdd").addClass("activeItem");
+        } else{
+            $("#patternsShow").addClass("activeItem");
+        }
+    } else if(path.includes("rules")){
+        $("#info4_box").slideDown(500);
+        if(path.includes("new")){
+            $("#rulesAdd").addClass("activeItem");
+        } else{
+            $("#rulesShow").addClass("activeItem");
+        }
+    } else if(path.includes("schedules")){
+        $("#info5_box").slideDown(500);
+        if(path.includes("new")){
+            $("#schedulesAdd").addClass("activeItem");
+        } else{
+            $("#schedulesShow").addClass("activeItem");
+        }
+    }
 }
 
 $(document).on('ready page:load', function (){   

@@ -40,6 +40,7 @@ class LocationsController < ApplicationController
     
     def show
         @location = Location.find(params[:id])
+        @events = Event.where(location_id: params[:id]).order(startDate: :asc)
     end
     
     private

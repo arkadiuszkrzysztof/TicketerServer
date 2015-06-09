@@ -1,2 +1,24 @@
-<h1>Patterns#show</h1>
-<p>Find me in app/views/patterns/show.html.erb</p>
+<h1 class="contentHeader">Pattern Request Details</h1>
+
+<table id="formTable">
+    <tr class="formRow">
+        <td class="formCell">
+            <span class="itemDescription">Pattern name</span><br>
+            <span class="itemDetails"><%= @pattern.name %></span>
+        </td>
+        <td class="formCell">
+            <span class="itemDescription">Request status</span><br>
+            <span class="itemDetails"><%= @pattern.status %></span>
+        </td>
+    </tr>
+    <tr class="formRow">
+        <td class="formCell">
+            <span class="itemDescription">Description</span><br>
+            <span class="itemDetails"><%= simple_format(@pattern.description) %></span>
+        </td>
+        <td class="formCell">
+            <span class="itemDescription">Tags</span><br>
+            <span class="itemDetails"><%= simple_format(@pattern.tags) %></span>
+        </td>
+    </tr>
+</table>

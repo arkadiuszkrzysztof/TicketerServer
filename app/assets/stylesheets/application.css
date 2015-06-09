@@ -1,6 +1,6 @@
 html, body{
     background-color: #E1E1E1;
-    min-height: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
@@ -177,6 +177,13 @@ html, body{
     text-align: center;
     border-bottom: 1px solid #3264C8;
 }
+.resultCellLeftQuick{
+    text-align: left;
+}
+
+.resultCellCenterQuick{
+    text-align: center;
+}
 
 .resultAction{
     width: 100px;
@@ -196,6 +203,28 @@ html, body{
     background-color: #E1E1E1;
     margin: 0 auto;
 }
+.dotColorQuick{
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: #3264C8;
+    margin: 0 auto;
+}
+.dotMonoQuick {
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: #E1E1E1;
+    margin: 0 auto;
+}
+.dotOrangeQuick{
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: #FFB62B;
+    margin: 0 auto;
+}
+
 .leftRadious{
     border-radius: 10px 0 0 10px;
 }
@@ -246,6 +275,15 @@ html, body{
     width: 75%;
     font-size: 26px;
     font-weight: 600;
+}
+
+.contentSubHeader{
+    margin: 0px 0px 0px 10px;
+    border-bottom: 1px solid #3264C8;
+    width: 75%;
+    font-size: 16px;
+    font-weight: 600;
+    color: #3264C8;
 }
 
 #formTable{
@@ -332,4 +370,174 @@ html, body{
 
 .locationEmain{
     width: 250px;
+}
+
+.userFullName{
+    width: 250px;
+}
+
+.userOrganization{
+    width: 260px;
+}
+
+.userEmain{
+    width: 260px;
+}
+.quickResultTable{
+    width: 870px;
+}
+.quickResultRow{
+    height: 30px;
+}
+.quickEventStatus{
+    width: 40px;
+}
+.eventDateQuick{
+    width: 120px;
+    font-weight: 600;
+}
+.eventNameQuick{
+    width: 710px;
+}
+.eventNameQuick a {
+    font-weight: 600;
+    color: inherit;
+    text-decoration: none;
+}
+.emptyRow{
+    width: 870px;
+    font-style: italic;
+}
+#patternsTable{
+    width: 870px;
+}
+.patternsRow{
+    height: 200px;
+}
+.patternsCell{
+    padding: 20px;
+    width: 395px;
+    vertical-align: top;
+    min-height: 200px;
+}
+.patternsImage{
+    width: 24px;
+    height: 24px;
+    padding: 5px 20px 5px 10px;
+    vertical-align: middle;
+}
+.pattternsHeader{
+    padding: 0px;
+    margin: 0px;
+    font-size: 24px;
+    font-weight: 600;
+    background-color: #3264C8;
+    color: #E1E1E1;
+    box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.75);
+    -webkit-box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.75);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+.patternDescription{
+    text-align: justify;
+}
+.boldText{
+    font-weight: 600;
+}
+.patternsQuickTable{
+    width: 395px;
+}
+.patternsQuickRow{
+    height: 30px;
+}
+.patternsQuickStatus{
+    width: 20px;
+}
+.patternsQuickStatusLabel{
+    width: 70px;
+}
+.patternsQuickName{
+    width: 210px;
+}
+.patternsQuickAction{
+    width: 95px;
+}
+.quickShortMin{
+    width: 20px;
+    height: 20px;
+}
+.sidePaddingMin{
+    padding: 0px 5px;
+}
+.patternsQuickHeader{
+    border-bottom: 1px solid #3264C8;
+    color: #3264C8;
+    font-weight: 600;
+}
+.patternsQuickName a{
+    font-weight: 600;
+    color: inherit;
+    text-decoration: none;
+}
+#logoutButton{
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#logoutButton a{
+    font-weight: 600;
+    color: inherit;
+    text-decoration: none;
+}
+#logoutIcon{
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+#loginContainer{
+    background-color: #3264C8;
+    color: #ffffff;
+    height: 100%;
+    width: 100%;
+}
+#loginLogo{
+    width: 100%;
+    text-align: center;
+    padding-top: 200px;
+}
+#loginTopBanner{
+    width: 450px;
+    height: 150px;
+}
+#loginForm{
+    width: 100%;
+    text-align: center;
+}
+.loginFormInput{
+    text-align: center;
+    padding: 7px;
+    margin: 5px;
+    border: 4px solid #E1E1E1;
+    border-radius: 7px;
+    background-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    font-size: 20px;
+}
+.loginFormInput:focus {
+    outline: none;
+}
+.loginFormSubmit{
+    text-align: center;
+    padding: 7px;
+    margin: 5px;
+    border: 4px solid #ffffff;
+    border-radius: 7px;
+    background-color: #3264C8;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ffffff;
 }

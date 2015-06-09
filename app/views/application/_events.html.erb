@@ -1,0 +1,20 @@
+<h1 class="contentSubHeader">Associated Events</h1>
+<% if @events.blank? %>
+    <%= render 'empty' %>
+<% else %>
+    <table  id="quickResultTable" cellspacing="0" cellpadding="0">
+      <% @events.each do |event| %>
+        <tr class="quickResultRow">
+          <td class="resultCellCenterQuick quickEventStatus">
+            <% if event.tags.include? "lock" %>
+              <div class="dotMonoQuick"></div>
+            <% else %>
+              <div class="dotColorQuick"></div>
+            <% end %>
+          </td>
+          <td class="resultCellCenterQuick eventDateQuick"><%= event.startDate %></td>
+          <td class="resultCellLeftQuick eventNameQuick"><%= link_to event.fullName, event %></td>
+        </tr>
+      <% end %>
+    </table>
+<% end %>

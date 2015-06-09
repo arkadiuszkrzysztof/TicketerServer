@@ -1,0 +1,42 @@
+<% if @pattern.errors.any? %>
+    <div id="errors">
+        <ul>
+            <% @pattern.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+<%= form_for @pattern do |f| %>
+    <table id="formTable">
+        <tr class="formRow">
+            <td class="formCell">
+                <%= f.label "Pattern name" %><br>
+                <%= f.text_field :name, :class => "formTextfield" %>
+            </td>
+            <td class="formCell">
+                <%= f.label "Request status" %><br>
+                <% if @pattern.status.blank? %>
+                    <%= f.text_field :status, :value => "New", :readonly => true, :class => "formTextfield" %>
+                <% else %>
+                    <%= f.text_field :status, :value => @pattern.stat, :readonly => true, :class => "formTextfield" %>
+                <% end %>
+            </td>
+        </tr>
+        <tr class="formRow">
+            <td class="formCell">
+                <%= f.label "Description" %><br>
+                <%= f.text_area :description, :class => "formTextarea" %>
+            </td>
+            <td class="formCell">
+                <%= f.label "Tags" %><br>
+                <%= f.text_area :tags, :class => "formTextarea" %>
+            </td>
+        </tr>
+        <tr class="formRow">
+            <td class="formCell formCenter" colspan="2">
+                <%= f.submit "Save Prattern Request", :class => "formSubmit" %>
+            </td>
+        </tr>
+    </table>
+<% end %>

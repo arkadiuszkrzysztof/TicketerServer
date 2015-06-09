@@ -38,3 +38,6 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Authorization libraries
+gem 'devise', '~> 3.2.4'
+gem 'cancancan', '~> 1.10'

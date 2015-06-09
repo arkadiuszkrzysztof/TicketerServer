@@ -40,6 +40,7 @@ class OrganizationsController < ApplicationController
     
     def show
         @organization = Organization.find(params[:id])
+        @events = Event.where(owner_id: params[:id]).order(startDate: :asc)
     end
     
     private

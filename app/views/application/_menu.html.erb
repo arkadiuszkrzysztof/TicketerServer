@@ -8,9 +8,9 @@
         <td>
             <div class="menuItems" id="info1_box">
                 <ul class="mItems">
-                    <li class="mItem" id="usersShow"><%= link_to 'Show', controller: 'users', action: 'index' %></li>
-                    <li class="mItem" id="usersAdd"><%= link_to 'Add', controller: 'users', action: 'new' %></li>
-                    <li class="mItem" id="usersImport"><%= link_to 'Import', controller: 'go', action: 'import' %></li>
+                    <li class="mItem" id="usersShow"><%= link_to 'Show', controller: '/users', action: 'index' %></li>
+                    <li class="mItem" id="usersAdd"><%= link_to 'Add', controller: '/users', action: 'new' %></li>
+                    <li class="mItem" id="usersImport"><%= link_to 'Import', controller: '/go', action: 'import' %></li>
                 </ul>
             </div>
         </td>
@@ -24,9 +24,9 @@
         <td>
             <div class="menuItems" id="info2_box" >
                 <ul class="mItems">
-                    <li class="mItem" id="eventsShow"><%= link_to 'Show', controller: 'events', action: 'index' %></li>
-                    <li class="mItem" id="eventsAdd"><%= link_to 'Add', controller: 'events', action: 'new' %></li>
-                    <li class="mItem" id="eventsArchive"><%= link_to 'Archive', controller: 'go', action: 'archive' %></li>
+                    <li class="mItem" id="eventsShow"><%= link_to 'Show', controller: '/events', action: 'index' %></li>
+                    <li class="mItem" id="eventsAdd"><%= link_to 'Add', controller: '/events', action: 'new' %></li>
+                    <li class="mItem" id="eventsArchive"><%= link_to 'Archive', controller: '/go', action: 'archive' %></li>
                 </ul>
             </div>
         </td>
@@ -40,8 +40,8 @@
         <td>
             <div class="menuItems" id="info3_box">
                 <ul class="mItems">
-                    <li class="mItem" id="patternsShow"><%= link_to 'Show', controller: 'patterns', action: 'index' %></li>
-                    <li class="mItem" id="patternsRequest"><%= link_to 'Request', controller: 'go', action: 'demand' %></li>
+                    <li class="mItem" id="patternsShow"><%= link_to 'Show', controller: '/patterns', action: 'index' %></li>
+                    <li class="mItem" id="patternsAdd"><%= link_to 'Request', controller: '/patterns', action: 'new' %></li>
                 </ul>
             </div>
         </td>
@@ -55,8 +55,8 @@
         <td>
             <div class="menuItems" id="info4_box">
                 <ul class="mItems">
-                    <li class="mItem" id="rulesShow"><%= link_to 'Show', controller: 'rules', action: 'index' %></li>
-                    <li class="mItem" id="rulesAdd"><%= link_to 'Add', controller: 'rules', action: 'new' %></li>
+                    <li class="mItem" id="rulesShow"><%= link_to 'Show', controller: '/rules', action: 'index' %></li>
+                    <li class="mItem" id="rulesAdd"><%= link_to 'Add', controller: '/rules', action: 'new' %></li>
                 </ul>
             </div>
         </td>
@@ -70,8 +70,8 @@
         <td>
             <div class="menuItems" id="info5_box">
                 <ul class="mItems">
-                    <li class="mItem" id="schedulesShow"><%= link_to 'Show', controller: 'schedules', action: 'index' %></li>
-                    <li class="mItem" id="schedulesAdd"><%= link_to 'Add', controller: 'schedules', action: 'new' %></li>
+                    <li class="mItem" id="schedulesShow"><%= link_to 'Show', controller: '/schedules', action: 'index' %></li>
+                    <li class="mItem" id="schedulesAdd"><%= link_to 'Add', controller: '/schedules', action: 'new' %></li>
                 </ul>
             </div>
         </td>
@@ -85,8 +85,8 @@
         <td>
             <div class="menuItems" id="info6_box">
                 <ul class="mItems">
-                    <li class="mItem" id="organizationsShow"><%= link_to 'Show', controller: 'organizations', action: 'index' %></li>
-                    <li class="mItem" id="organizationsAdd"><%= link_to 'Add', controller: 'organizations', action: 'new' %></li>
+                    <li class="mItem" id="organizationsShow"><%= link_to 'Show', controller: '/organizations', action: 'index' %></li>
+                    <li class="mItem" id="organizationsAdd"><%= link_to 'Add', controller: '/organizations', action: 'new' %></li>
                 </ul>
             </div>
         </td>
@@ -100,18 +100,20 @@
         <td>
             <div class="menuItems" id="info7_box">
                 <ul class="mItems">
-                    <li class="mItem" id="locationsShow"><%= link_to 'Show', controller: 'locations', action: 'index' %></li>
-                    <li class="mItem" id="locationsAdd"><%= link_to 'Add', controller: 'locations', action: 'new' %></li>
+                    <li class="mItem" id="locationsShow"><%= link_to 'Show', controller: '/locations', action: 'index' %></li>
+                    <li class="mItem" id="locationsAdd"><%= link_to 'Add', controller: '/locations', action: 'new' %></li>
                 </ul>
             </div>
         </td>
     </tr>
 </table>
 
+<%= render "admin" %>
+
 <!--<ul>-->
-<!--    <li><%= link_to 'Home', controller: 'go', action: 'home' %></li>-->
-<!--    <li><%= link_to 'About', controller: 'go', action: 'about' %></li>-->
-<!--    <li><%= link_to 'Settings', controller: 'go', action: 'settings' %></li>-->
-<!--    <li><%= link_to 'Calendar', controller: 'go', action: 'calendar' %></li>-->
-<!--    <li><%= link_to 'Security', controller: 'go', action: 'security' %></li>-->
+<!--    <li><%= link_to 'Home', controller: '/go', action: 'home' %></li>-->
+<!--    <li><%= link_to 'About', controller: '/go', action: 'about' %></li>-->
+<!--    <li><%= link_to 'Settings', controller: '/go', action: 'settings' %></li>-->
+<!--    <li><%= link_to 'Calendar', controller: '/go', action: 'calendar' %></li>-->
+<!--    <li><%= link_to 'Security', controller: '/go', action: 'security' %></li>-->
 <!--</ul>-->

@@ -1,0 +1,54 @@
+<table id="patternsTable">
+    <tr class="patternsRow">
+        <td class="patternsCell">
+            <p class="pattternsHeader"><img src="<%= image_url 'manager3.png' %>" alt="Conference" class="patternsImage">Conference</p>
+            <p class="patternDescription"><span class="boldText">Conference</span> pattern is best for closed events, like business meetings, lectures, conferences and every other ocasion, when full list of participants is well known before event starts. This pattern allows to enable option of multiple enters and exits on one ticket, to display on Ticketer Client full list of participants, their photos and basic personal data, and to generate attendees presence list.</p>
+        </td>
+        <td class="patternsCell">
+            <p class="pattternsHeader"><img src="<%= image_url 'instrument7.png' %>" alt="Concert" class="patternsImage">Concert</p>
+            <p class="patternDescription">Use <span class="boldText">Concert</span> pattern to handle big events and thousands of participants at one time. It's not necessary to know every attendee by name - predefined rules can grant access to particular group of people or person with valid voucher. Continuous validation mode on Ticketer Client ensure fast and efficient way to validate tickets with no mistakes risk.</p>
+        </td>
+    </tr>
+    <tr class="patternsRow">
+        <td class="patternsCell">
+            <p class="pattternsHeader"><img src="<%= image_url 'stopwatch6.png' %>" alt="Time Recorder" class="patternsImage">Time Recorder</p>
+            <p class="patternDescription">The best way to implement easy and flexible system to coordinate employees working hours is <span class="boldText">Time Recorder</span> pattern selection. With customized repotrs, it allows to review individual and group data. The biggest advantage over conventional systems are mobility, scalability and real-time maintenance works, which can performed also remotely.</p>
+        </td>
+        <td class="patternsCell">
+            <p class="pattternsHeader"><img src="<%= image_url 'question5.png' %>" alt="Your Orn Patterns" class="patternsImage">Your Own Patterns</p>
+            <p class="patternDescription">
+                <% if @patterns.blank? %>
+                    <%= render 'empty' %>
+                <% else %>
+                    <table id="patternsQuickTable" cellpadding="0" cellspacing="0">
+                        <tr class="patternsQuickRow">
+                            <td class="patternsQuickHeader patternsQuickStatus resultCellCenterQuick patternsQuickHeader" colspan="2">Status</td>
+                            <td class="patternsQuickHeader patternsQuickName resultCellCenterQuick patternsQuickHeader">Name</td>
+                            <td class="patternsQuickHeader patternsQuickAction resultCellCenterQuick patternsQuickHeader">Action</td>
+                        </tr>
+                        <% @patterns.each do |pattern| %>
+                            <tr class="patternsQuickRow">
+                                <td class="patternsQuickCell patternsQuickStatus">
+                                    <% if pattern.status == "Rejected" %>
+                                        <div class="dotMonoQuick"></div>
+                                    <% elsif pattern.status == "Approved" %>
+                                        <div class="dotColorQuick"></div>
+                                    <% else %>
+                                        <div class="dotOrangeQuick"></div>
+                                    <% end %>
+                                </td>
+                                <td class="patternsQuickCell patternsQuickStatusLabel"><%= pattern.status %></td>
+                                <td class="patternsQuickCell patternsQuickName"><%= link_to pattern.name, pattern %><br></td>
+                                <td class="patternsQuickCell patternsQuickAction resultCellCenterQuick">
+                                    <%= link_to (image_tag "magnifying13.png", :class => "quickShortMin"), pattern %>
+                                    <%= link_to (image_tag "edit45.png", :class => "quickShortMin sidePaddingMin"), edit_pattern_path(pattern) %>
+                                    <%= link_to image_tag("rubbish7.png", :class => "quickShortMin"), pattern, method: :delete, data: {confirm: "Are you sure?"} %>
+                                </td>
+                            </tr>
+                        <% end %>
+                    </table>
+                <% end %>
+            </p>
+        </td>
+    </tr>
+</table>

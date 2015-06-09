@@ -1,0 +1,63 @@
+<% if @user.errors.any? %>
+    <div id="errors">
+        <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+<%= form_for @user do |f| %>
+    <table id="formTable">
+        <tr class="formRow">
+            <td class="formCell" colspan="2">
+                <%= f.label "Administrator" %><br>
+                <%= f.collection_select(:organization_id, @organizations, 'id', 'fullName') %>
+            </td>
+        <tr class="formRow">
+            <td class="formCell">
+                <%= f.label "User name" %><br>
+                <%= f.text_field :name, :class => "formTextfield" %>
+            </td>
+            <td class="formCell">
+                <%= f.label "User surname" %><br>
+                <%= f.text_field :surname, :class => "formTextfield" %>
+            </td>
+        </tr>
+        <tr class="formRow">
+            <td class="formCell">
+                <%= f.label "Email" %><br>
+                <%= f.text_field :email, :class => "formTextfield" %>
+            </td>
+            <td class="formCell">
+                <%= f.label "Phone" %><br>
+                <%= f.text_field :phone, :class => "formTextfield" %>
+            </td>
+        </tr>
+        <tr class="formRow">
+            <td class="formCell">
+                <%= f.label "Login" %><br>
+                <%= f.text_field :login, :class => "formTextfield" %>
+            </td>
+            <td class="formCell">
+                <%= f.label "Password" %><br>
+                <%= f.password_field :password, :class => "formTextfield" %>
+            </td>
+        </tr>
+        <tr class="formRow">
+            <td class="formCell">
+                <%= f.label "Address" %><br>
+                <%= f.text_area :address, :class => "formTextarea" %>
+            </td>
+            <td class="formCell">
+                <%= f.label "Tags" %><br>
+                <%= f.text_area :tags, :class => "formTextarea" %>
+            </td>
+        </tr>
+        <tr class="formRow">
+            <td class="formCell formCenter" colspan="2">
+                <%= f.submit "Save User", :class => "formSubmit" %>
+            </td>
+        </tr>
+    </table>
+<% end %>

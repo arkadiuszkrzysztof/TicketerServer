@@ -1,2 +1,50 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1 class="contentHeader">User Details</h1>
+
+<table id="formTable">
+    <tr class="formRow" colspan="2">
+        <td class="formCell">
+            <span class="itemDescription">Administrator</span><br>
+            <span class="itemDetails"><%= link_to @organization.fullName, organization_path(@organization) %></span>
+        </td>
+    </tr>
+    <tr class="formRow">
+        <td class="formCell">
+            <span class="itemDescription">User name</span><br>
+            <span class="itemDetails"><%= @user.name %></span>
+        </td>
+        <td class="formCell">
+            <span class="itemDescription">User surname</span><br>
+            <span class="itemDetails"><%= @user.surname %></span>
+        </td>
+    </tr>
+    <tr class="formRow">
+        <td class="formCell">
+            <span class="itemDescription">Email</span><br>
+            <span class="itemDetails"><%= @user.email %></span>
+        </td>
+        <td class="formCell">
+            <span class="itemDescription">Phone</span><br>
+            <span class="itemDetails"><%= @user.phone %></span>
+        </td>
+    </tr>
+    <tr class="formRow">
+        <td class="formCell">
+            <span class="itemDescription">Login</span><br>
+            <span class="itemDetails"><%= @user.login %></span>
+        </td>
+        <td class="formCell">
+            <span class="itemDescription">Password</span><br>
+            <span class="itemDetails"><%= @user.password %></span>
+        </td>
+    </tr>
+    <tr class="formRow">
+        <td class="formCell">
+            <span class="itemDescription">Address</span><br>
+            <span class="itemDetails"><%= simple_format(@user.address) %></span>
+        </td>
+        <td class="formCell">
+            <span class="itemDescription">Tags</span><br>
+            <span class="itemDetails"><%= simple_format(@user.tags) %></span>
+        </td>
+    </tr>
+</table>
