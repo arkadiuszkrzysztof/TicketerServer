@@ -15,12 +15,8 @@ class GoController < ApplicationController
   end
   
   def import
-    
   end
   
   def archive
-  end
-  
-  def demand
   end
 end
